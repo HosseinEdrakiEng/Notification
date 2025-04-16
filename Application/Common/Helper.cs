@@ -71,5 +71,10 @@ namespace Application.Common
         {
             return JsonSerializer.Serialize(model, options: option ?? new JsonSerializerOptions());
         }
+
+        public static T DeserializeObject<T>(this string data, JsonSerializerOptions option = null)
+        {
+            return JsonSerializer.Deserialize<T>(data, options: option ?? new JsonSerializerOptions());
+        }
     }
 }

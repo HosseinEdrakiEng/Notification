@@ -21,7 +21,7 @@ namespace Notification.Api
 
         public static IServiceCollection AddMiddleware(this IServiceCollection services) 
         {
-            services.AddTransient<ExceptionHandlingMiddleware>();
+            services.AddScoped<ExceptionHandlingMiddleware>();
 
             return services;
         }
