@@ -19,7 +19,7 @@ namespace Notification.Api
             return services;
         }
 
-        public static IServiceCollection AddMiddleware(this IServiceCollection services) 
+        public static IServiceCollection AddMiddleware(this IServiceCollection services)
         {
             services.AddScoped<ExceptionHandlingMiddleware>();
 

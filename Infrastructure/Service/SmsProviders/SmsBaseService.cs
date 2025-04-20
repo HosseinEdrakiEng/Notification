@@ -7,7 +7,7 @@ namespace Infrastructure.Service.SmsProviders
     {
         protected SmsBaseService()
         {
-            
+
         }
 
         public async Task<BaseResponse<SendSmsResponseDto>> Send(SendSmsRequestDto request, CancellationToken cancellationToken)

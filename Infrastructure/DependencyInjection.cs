@@ -29,10 +29,10 @@ namespace Infrastructure
             return services;
         }
 
-        public static IServiceCollection AddProviderHttpClient(this IServiceCollection services, IConfiguration configuration) 
+        public static IServiceCollection AddProviderHttpClient(this IServiceCollection services, IConfiguration configuration)
         {
             var appConfig = configuration.GetSection("SmsIrConfig").Get<SmsIrConfig>();
-            services.AddHttpClient("SmsIR", o => 
+            services.AddHttpClient("SmsIR", o =>
             {
                 o.BaseAddress = new Uri(appConfig.BaseUrl);
                 o.Timeout = appConfig.Timeout;
@@ -48,7 +48,7 @@ namespace Infrastructure
             return services;
         }
 
-        public static IServiceCollection AddConfigOption(this IServiceCollection services, IConfiguration configuration) 
+        public static IServiceCollection AddConfigOption(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddOptions();
             services.Configure<SmsIrConfig>(configuration.GetSection("SmsIrConfig"));
